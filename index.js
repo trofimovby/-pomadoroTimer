@@ -11,7 +11,7 @@ modeButtons.addEventListener('click', handleMode);
 
 function handleMode() {
     const {mode} = event.target.dataset;
-    if(!mode) return;
+    if (!mode) return;
 
     switchMode(mode);
 }
@@ -29,5 +29,21 @@ function switchMode(mode) {
         .forEach(e => e.classList.remove('active'));
     document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
     document.body.style.backgroundColor = `var(--${mode})`;
-    
+
+    updateClock();
+}
+
+
+function updateClock() {
+    const {remainingTIme} = timer;
+    const minutes = `${remainingTIme.minutes}`.padStart(2, '0');
+    const seconds = `${remainingTIme.seconds}`.padStart(2, '0');
+
+    const min = document.getElementById('js-minutes');
+    const sec = document.getElementById('js-seconds');
+
+    min.textContent
+
+
+
 }
